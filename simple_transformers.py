@@ -51,17 +51,18 @@ with open('/content/gdrive/MyDrive/News_Category_Dataset_v2.json', 'r') as f:
 y = [dic['category'].split(' & ') for dic in l]
 X = [dic['short_description'] for dic in l]
 
-cat = []
+categories = []
 for i in y:
   for k in i:
-    if k not in cat:
-      cat.append(k)
+    if k not in categories:
+      categories.append(k)
 
 vec_list = []
+N = len(categories)
 for i in y:
-  vec = [0 for i in range(len(cat))]
-  for index in range(len(cat)):
-    if cat[index] in i:
+  vec = [0 for i in range(N)]
+  for index in range(N):
+    if categories[index] in i:
       vec[index] = 1
   vec_list.append(vec)
 

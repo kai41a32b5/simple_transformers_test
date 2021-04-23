@@ -82,7 +82,7 @@ model_args = MultiLabelClassificationArgs(num_train_epochs=1)
 
 # Create a MultiLabelClassificationModel
 model = MultiLabelClassificationModel(
-    "bert", "bert-base-uncased", num_labels=len(cat),
+    "bert", "bert-base-uncased", num_labels=N,
 )
 
 # Train the model
